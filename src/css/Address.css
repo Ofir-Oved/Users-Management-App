@@ -1,0 +1,33 @@
+.address-card {
+    border: 2px solid #bd7e4a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.input-group-address {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.input-group-address label {
+    margin-right: 15px;
+    width: 50px;
+    text-align: left;
+}
+
+.input-group-address input {
+    flex: 1;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
