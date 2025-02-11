@@ -1,0 +1,79 @@
+.todos-container{
+    padding-top: 0px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;  
+}
+
+.headline{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.headline button{
+    background-color: #ffb972;
+    color: 	#fffee0;
+    padding: 0.6em 1.2em;
+    height: fit-content;
+}
+
+.todos-list{
+    border: 2px solid #cb6d51;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+
+    overflow-y: scroll;
+}
+
+.posts-container{
+    display: flex;
+    flex-direction: column;
+    height: 50%;  /* Take full height of the parent container */
+}
+
+.posts-list{
+    border: 2px solid #83502e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    overflow-y: scroll;
+}
+
+.post-card{
+    border: 2px solid #bd7e4a;	
+}
+
+.completion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.complete-button button{
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 5px 8px 5px 8px;
+    color:#ff7400;
+    background-color: #fffec8;
+    border: 1px solid #ff7400;
+    white-space: nowrap;  /* Prevents the text from wrapping */
+
+}
+
+.complete-button{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin-left: 5px;
+}
