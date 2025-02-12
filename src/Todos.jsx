@@ -1,14 +1,25 @@
+import { useState } from "react";
 import Todo from "./Todo";
+import NewTodo from "./New Todo";
 import './css/User Lists.css';
 
 const Todos = ({name, todos}) => {
+  // State to manage which component to show
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddClick = () => {
+    setIsAdding(true);  // When the "Add" button is clicked, show the AddTodo component
+  };
 
   return (
     <>
+        {isAdding ? (
+            <NewTodo name={name}/>
+        ) : (
         <div className="todos-container">
             <div className="headline">
                 <h2>Todos - {name}</h2>
-                <button>Add</button>
+                <button onClick={handleAddClick}>Add</button>
             </div>
             <div className="todos-list">
                 {todos.length > 0 ? (
@@ -20,6 +31,7 @@ const Todos = ({name, todos}) => {
                 )}
             </div>
         </div>
+        )}
     </>
   );
 };
