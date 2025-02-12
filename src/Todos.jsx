@@ -11,10 +11,14 @@ const Todos = ({name, todos}) => {
     setIsAdding(true);  // When the "Add" button is clicked, show the AddTodo component
   };
 
+  const handleCancel = () => {
+    setIsAdding(false);
+  }
+
   return (
     <>
         {isAdding ? (
-            <NewTodo name={name}/>
+            <NewTodo name={name} cancel={handleCancel}/>
         ) : (
         <div className="todos-container">
             <div className="headline">

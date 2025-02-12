@@ -1,6 +1,10 @@
 import './css/New Todo-Post.css';
 
-const NewPost = ({name}) => {
+const NewPost = ({name, cancel}) => {
+
+  const handleCancel = () => {
+    cancel();
+  }
 
   return (
     <>
@@ -18,7 +22,7 @@ const NewPost = ({name}) => {
               <input></input>
           </div>
           <div className='buttons'>
-              <button>Cancel</button>
+              <button onClick={handleCancel}>Cancel</button>
               <button>Add</button>
           </div>
         </div>

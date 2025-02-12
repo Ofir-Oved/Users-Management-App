@@ -11,10 +11,14 @@ const Posts = ({name, posts}) => {
     setIsAdding(true);  // When the "Add" button is clicked, show the New Post component
   };
 
+  const handleCancel = () => {
+    setIsAdding(false);
+  }
+
   return (
     <>
         {isAdding ? (
-            <NewPost name={name}/>
+            <NewPost name={name} cancel={handleCancel}/>
         ) : (
         <div className="posts-container">
             <div className="headline">
