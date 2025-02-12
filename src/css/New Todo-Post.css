@@ -1,0 +1,52 @@
+.new-todo-card {
+    height: 50%;
+    padding-top: 12px;
+}
+
+.new-todo-body{
+    border: 2px solid #bd7e4a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center the title vertically */
+    align-items: center; /* Center the title horizontally */
+    position: relative; /* Allows absolute positioning for the buttons */
+}
+
+.title{
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    padding-bottom: 25px;
+    padding-right: 20px;
+    height: 25px;
+}
+
+.title label{
+    margin-right: 10px;
+    width: 50px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.title input{
+    border: 1px solid black;
+    border-radius: 5px;
+    line-height: 1.5;
+    height: 100%;
+    width: 100%;
+
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute; /* Allows positioning inside the parent */
+    bottom: 10px; /* Anchors it to the bottom */
+    right: 10px; /* Moves it to the right */
+}
