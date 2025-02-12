@@ -13,13 +13,15 @@ const NewPost = ({name, cancel}) => {
             <h2>New Post - {name}</h2>
         </div>
         <div className='new-post-body'>
-          <div className='title'>
-              <label>Title:</label>
-              <input></input>
-          </div>
-          <div className='post-body'>
-              <label>Body:</label>
-              <input></input>
+          <div className='adding-div'>
+            <div className='new-title'>
+                <label>Title:</label>
+                <input></input>
+            </div>
+            <div className='post-body'>
+                <label>Body:</label>
+                <input></input>
+            </div>
           </div>
           <div className='buttons'>
               <button onClick={handleCancel}>Cancel</button>

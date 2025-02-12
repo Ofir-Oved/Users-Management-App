@@ -18,7 +18,7 @@
     position: relative; /* Allows absolute positioning for the buttons */
 }
 
-.new-title{
+.new-title, .post-body{
     display: flex;
     align-self: center;
     justify-self: center;
@@ -41,6 +41,10 @@
     height: 100%;
     width: 100%;
 
+}
+
+.adding-div{
+    padding-bottom: 30px;
 }
 
 .buttons {
