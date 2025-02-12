@@ -1,9 +1,9 @@
-.new-todo-card {
+.new-todo-card, .new-post-card {
     height: 50%;
     padding-top: 12px;
 }
 
-.new-todo-body{
+.new-todo-body, .new-post-body{
     border: 2px solid #bd7e4a;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,14 +27,14 @@
     height: 25px;
 }
 
-.title label{
+.title label, .post-body label{
     margin-right: 10px;
     width: 50px;
     text-align: left;
     font-weight: 500;
 }
 
-.title input{
+.title input, .post-body input{
     border: 1px solid black;
     border-radius: 5px;
     line-height: 1.5;

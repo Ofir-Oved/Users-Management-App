@@ -1,14 +1,25 @@
+import { useState } from "react";
+import NewPost from "./New Post";
 import Post from "./post";
 import './css/User Lists.css'
 
 const Posts = ({name, posts}) => {
+  // State to manage which component to show
+  const [isAdding, setIsAdding] = useState(false);
+
+  const handleAddClick = () => {
+    setIsAdding(true);  // When the "Add" button is clicked, show the New Post component
+  };
 
   return (
     <>
+        {isAdding ? (
+            <NewPost name={name}/>
+        ) : (
         <div className="posts-container">
             <div className="headline">
                 <h2>Posts - {name}</h2>
-                <button>Add</button>
+                <button onClick={handleAddClick}>Add</button>
             </div>
             <div className="posts-list">
                 {posts.length > 0 ? (
@@ -20,6 +31,7 @@ const Posts = ({name, posts}) => {
                 )}
             </div>
         </div>
+        )}
     </>
   );
 };
