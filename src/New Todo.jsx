@@ -9,7 +9,7 @@ const NewTodo = ({name}) => {
             <h2>New Todo - {name}</h2>
         </div>
         <div className='new-todo-body'>
-          <div className='title'>
+          <div className='new-title'>
               <label>Title:</label>
               <input></input>
           </div>

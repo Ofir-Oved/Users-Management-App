@@ -18,7 +18,7 @@
     position: relative; /* Allows absolute positioning for the buttons */
 }
 
-.title{
+.new-title{
     display: flex;
     align-self: center;
     justify-self: center;
@@ -27,14 +27,14 @@
     height: 25px;
 }
 
-.title label, .post-body label{
+.new-title label, .post-body label{
     margin-right: 10px;
     width: 50px;
     text-align: left;
     font-weight: 500;
 }
 
-.title input, .post-body input{
+.new-title input, .post-body input{
     border: 1px solid black;
     border-radius: 5px;
     line-height: 1.5;
