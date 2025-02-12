@@ -3,7 +3,8 @@
     margin-top: 0px;
     display: flex;
     flex-direction: column;
-    height: 50%;  
+    /* height: 50%;   */
+    height: 400px;
 }
 
 .headline{
@@ -35,7 +36,8 @@
 .posts-container{
     display: flex;
     flex-direction: column;
-    height: 50%;  /* Take full height of the parent container */
+    /* height: 50%;   */
+    height: 400px;
 }
 
 .posts-list{

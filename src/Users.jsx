@@ -78,14 +78,14 @@ const Users = () => {
         </div>
         <div className="center-container">
             <div className={`user-list ${activeUserId ? 'mini' : ''}`}>
-                {filteredUsers.length > 0 ? (
-                    filteredUsers.map(user => (
-                        <UserData key={user.id} user={user} onDelete={handleDeleteUser} onUserClick={handleUserClick} isActive={user.id === activeUserId}/>
-                    ))
-                    ) : (
-                    <p>No users available</p>
-                )}
-            </div>
+                  {filteredUsers.length > 0 ? (
+                      filteredUsers.map(user => (
+                          <UserData key={user.id} user={user} onDelete={handleDeleteUser} onUserClick={handleUserClick} isActive={user.id === activeUserId}/>
+                      ))
+                      ) : (
+                      <p>No users available</p>
+                  )}
+              </div>
             {activeUserId &&
               filteredUsers.map(user => (
                 user.id === activeUserId && (
