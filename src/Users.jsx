@@ -22,12 +22,13 @@ const Users = () => {
         const { data: todosData } = await getAll(TODOS_URL);
         const { data: postsData } = await getAll(POSTS_URL);
 
-        // // Add initial isUserClicked to each user
-        // const initialUsers = usersData.map(user => ({ ...user, isUserClicked: false }));
-
         // Exclude deleted users stored in sessionStorage
         const deletedUsers = JSON.parse(sessionStorage.getItem("deletedUsers") || "[]");
         const filteredUsers = usersData.filter(user => !deletedUsers.includes(user.id));
+
+        // Check if todos exist in session storage, otherwise store them
+        const storedTodos = JSON.parse(sessionStorage.getItem("todos")) || todosData;
+        sessionStorage.setItem("todos", JSON.stringify(storedTodos));
 
         setUsers(filteredUsers);
         setTodos(todosData);
@@ -50,9 +51,11 @@ const Users = () => {
     };
 
     const usersData = useMemo(() => {
+      const storedTodos = JSON.parse(sessionStorage.getItem("todos")) || [];
+      
       return users.map((user) => ({
         ...user,
-        todos: todos.filter((todo) => todo.userId === user.id),
+        todos: storedTodos.filter((todo) => todo.userId === user.id),
         posts: posts.filter((post) => post.userId === user.id),
       }));
     }, [users, todos, posts]);
@@ -69,6 +72,10 @@ const Users = () => {
           );
       });
     }, [search, usersData]);
+
+    const updateTodos = (updatedTodos) => {
+      setTodos(updatedTodos);
+    };
 
   return (
     <>
@@ -90,7 +97,7 @@ const Users = () => {
               filteredUsers.map(user => (
                 user.id === activeUserId && (
                   <div className='user-lists' key={user.id}>
-                    <Todos name={user.name} todos={user.todos}/>
+                    <Todos name={user.name} todos={user.todos} updateTodos={updateTodos}/>
                     <Posts name={user.name} posts={user.posts}/>
                   </div>  
                 )

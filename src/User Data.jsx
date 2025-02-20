@@ -20,8 +20,11 @@ const UserData = ({user, onDelete, onUserClick, isActive }) => {
     }, [user.id]);
 
     const borderColor = useMemo(() => {
-      const hasIncompleteTodos = todos.some((todo) => !todo.completed); // Check if there are incomplete todos
-      return hasIncompleteTodos ? "red" : "green"; // Red for incomplete, green for all completed
+      const storedTodos = JSON.parse(sessionStorage.getItem("todos")) || [];
+      const userTodos = storedTodos.filter(todo => todo.userId === user.id);
+    
+      const hasIncompleteTodos = userTodos.some(todo => !todo.completed);
+      return hasIncompleteTodos ? "red" : "green";
     }, [todos]);
 
     const handleUpdate = () => {

@@ -1,9 +1,24 @@
 import { useState } from 'react'
 import './css/Todo.css'
 
-const Todo = ({todo}) => {
+const Todo = ({todo, updateTodo}) => {
 
     const [complete, setComplete] = useState(todo.completed);
+
+    const markCompleted = () => {
+        setComplete(true);
+    
+        // Update the todos in session storage
+        const storedTodos = JSON.parse(sessionStorage.getItem("todos")) || [];
+        const updatedTodos = storedTodos.map(t => 
+          t.id === todo.id ? { ...t, completed: true } : t
+        );
+    
+        sessionStorage.setItem("todos", JSON.stringify(updatedTodos));
+    
+        // Notify parent component about the update
+        updateTodos(updatedTodos);
+      };
 
   return (
     <>
@@ -18,7 +33,7 @@ const Todo = ({todo}) => {
                 </div>
             </div>
             <div className='complete-button' style={{display: complete? "none": "block"}}>
-                <button onClick={()=> setComplete(true)}>Mark Completed</button>
+                <button onClick={markCompleted}>Mark Completed</button>
             </div>
         </div>
     </div></>

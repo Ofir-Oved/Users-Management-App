@@ -3,7 +3,7 @@ import Todo from "./Todo";
 import NewTodo from "./New Todo";
 import './css/User Lists.css';
 
-const Todos = ({name, todos}) => {
+const Todos = ({name, todos, updateTodos}) => {
   // State to manage which component to show
   const [isAdding, setIsAdding] = useState(false);
 
@@ -28,7 +28,7 @@ const Todos = ({name, todos}) => {
             <div className="todos-list">
                 {todos.length > 0 ? (
                     todos.map(todo => (
-                        <Todo key={todo.id} todo={todo}/>
+                        <Todo key={todo.id} todo={todo} updateTodos={updateTodos}/>
                     ))
                     ) : (
                     <p>No todos available</p>
